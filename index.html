@@ -91,6 +91,13 @@ h1 span { display: block; }
   gap: clamp(14px, 2.5vh, 22px);
   margin-top: clamp(12px, 2.5vh, 24px);
 }
+@media (min-width: 900px) {
+  .intro { grid-template-columns: auto minmax(0, 27rem); align-items: end; column-gap: clamp(40px, 5vw, 72px); }
+  .meta { padding-bottom: 0.9rem; }
+  .meta .callouts { font-size: 0.95rem; gap: 2px 12px; }
+  .meta .callouts i { width: 7px; height: 7px; }
+  .meta .summary { font-size: 0.82rem; }
+}
 .meta { min-width: 0; }
 
 .callouts {
