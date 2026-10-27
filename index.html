@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Capitola North Holdings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Capitola North Holdings Ltd. Established 2026, Vancouver, British Columbia.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='38' r='22' fill='%23E8A838'/%3E%3Crect x='6' y='40' width='52' height='4' fill='%23F4E9D8'/%3E%3Crect x='6' y='48' width='52' height='5' fill='%23F4E9D8'/%3E%3Cpath d='M0 64 L18 40 L30 52 L44 34 L64 58 L64 64Z' fill='%231F4D45'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,400..900,0..100,0..1&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one fixed screen. Name and callouts on top, sunset-over-the-North-Shore scene fills the rest. */
+:root {
+  --sand: #F3E7D3;
+  --ink: #1B2E33;
+  --muted: #56686A;
+  --sky: #F7D9B0;
+  --mustard: #E8A838;
+  --tangerine: #DD6B2E;
+  --rust: #A8402A;
+  --evergreen: #1F4D45;
+  --fog: #9FBDBE;
+  --ocean: #2A5D6C;
+  --foam: #F3E7D3;
+  --accent-text: #A8402A;
+
+  --display: "Fraunces", "Cooper Black", Georgia, serif;
+  --mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --sand: #0F2026; --ink: #F1E5D0; --muted: #A8B8B4; --sky: #1D3A44;
+    --evergreen: #0E2E2A; --fog: #2F5458; --ocean: #12313B; --foam: #8FB3B3; --accent-text: #F0A66E;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --sand: #0F2026; --ink: #F1E5D0; --muted: #A8B8B4; --sky: #1D3A44;
+  --evergreen: #0E2E2A; --fog: #2F5458; --ocean: #12313B; --foam: #8FB3B3; --accent-text: #F0A66E;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  background: var(--sand);
+  color: var(--ink);
+  font-family: var(--display);
+  -webkit-font-smoothing: antialiased;
+}
+
+.top {
+  flex: none;
+  max-width: 1120px;
+  width: 100%;
+  margin-inline: auto;
+  padding-block: clamp(14px, 3vh, 28px) clamp(10px, 2.5vh, 24px);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 720px) {
+  .top { padding-left: max(40px, env(safe-area-inset-left, 0px)); padding-right: max(40px, env(safe-area-inset-right, 0px)); }
+}
+
+.legal {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+h1 {
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
+  font-weight: 900;
+  font-size: clamp(3rem, min(11.5vw, 12vh), 7.5rem);
+  line-height: 0.88;
+  letter-spacing: -0.02em;
+  margin: 0;
+  text-shadow: 0.035em 0.035em 0 var(--mustard), 0.07em 0.07em 0 var(--tangerine), 0.105em 0.105em 0 var(--rust);
+}
+h1 span { display: block; }
+
+.intro {
+  display: grid;
+  gap: clamp(14px, 2.5vh, 22px);
+  margin-top: clamp(12px, 2.5vh, 24px);
+}
+.meta { min-width: 0; }
+
+.callouts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 16px;
+  margin: 0;
+  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 48;
+  font-weight: 600;
+  font-style: italic;
+  font-size: clamp(0.95rem, 1.6vw, 1.15rem);
+  color: var(--accent-text);
+}
+.callouts i {
+  width: 10px; height: 10px; border-radius: 50%;
+  background: var(--mustard);
+  flex: none;
+}
+
+.topline {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px 24px;
+}
+.summary {
+  max-width: 36rem;
+  margin: clamp(6px, 1.5vh, 12px) 0 0;
+  font-variation-settings: "SOFT" 100, "opsz" 18;
+  font-weight: 400;
+  font-size: clamp(0.88rem, 1.3vw, 1rem);
+  line-height: 1.5;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+.summary strong { font-weight: 650; }
+.contact {
+  font-family: var(--mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--mustard);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.contact-label { letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-right: 8px; text-decoration: none; display: inline-block; }
+.contact:hover { text-decoration-color: var(--tangerine); }
+.contact:focus-visible { outline: 2px solid var(--tangerine); outline-offset: 3px; }
+
+@media (max-width: 520px) {
+  .callouts { flex-direction: column; align-items: flex-start; }
+  .callouts i { display: none; }
+}
+
+.scene-box { flex: 1 1 auto; min-height: 45%; position: relative; overflow: hidden; background: var(--sky); }
+.scene { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 100%; display: block; overflow: visible; }
+.sun-group { animation: rise 1.6s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes rise { from { transform: translateY(26px); } to { transform: translateY(0); } }
+@media (prefers-reduced-motion: reduce) { .sun-group { animation: none; } }
+
+.stripes { flex: none; display: grid; grid-template-rows: repeat(4, 6px); }
+.stripes i:nth-child(1) { background: var(--mustard); }
+.stripes i:nth-child(2) { background: var(--tangerine); }
+.stripes i:nth-child(3) { background: var(--rust); }
+.stripes i:nth-child(4) { background: var(--evergreen); }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="topline">
+    <div class="legal">Capitola North Holdings Ltd.</div>
+    <a class="contact" href="mailto:info@capitolanorth.com"><span class="contact-label">Contact</span>info@capitolanorth.com</a>
+  </div>
+  <div class="intro">
+    <h1><span>Capitola</span><span>North</span></h1>
+    <div class="meta">
+      <p class="callouts"><span>Established 2026</span><i aria-hidden="true"></i><span>Vancouver, British Columbia</span></p>
+      <p class="summary"><strong>A permanent home for Canadian software companies.</strong> Capitola North acquires small Canadian software businesses and operates them for the long term.</p>
+    </div>
+  </div>
+</header>
+
+<div class="scene-box">
+  <svg class="scene" viewBox="0 0 1200 380" preserveAspectRatio="xMidYMax slice" role="img" aria-label="A striped retro sunset setting behind evergreen mountains above the ocean">
+    <defs>
+      <clipPath id="sunclip"><circle cx="600" cy="250" r="150"/></clipPath>
+      <g id="tree"><path d="M0 -78 L13 -52 L7 -52 L20 -30 L11 -30 L26 -6 L-26 -6 L-11 -30 L-20 -30 L-7 -52 L-13 -52 Z" fill="var(--evergreen)"/><rect x="-3" y="-6" width="6" height="10" fill="var(--evergreen)"/></g>
+    </defs>
+    <rect x="-2000" y="-2000" width="5200" height="2380" fill="var(--sky)"/>
+    <g class="sun-group">
+      <circle cx="600" cy="250" r="300" fill="var(--rust)" opacity="0.9"/>
+      <circle cx="600" cy="250" r="254" fill="var(--tangerine)"/>
+      <circle cx="600" cy="250" r="208" fill="var(--sky)"/>
+      <circle cx="600" cy="250" r="150" fill="var(--mustard)"/>
+      <g clip-path="url(#sunclip)" fill="var(--sky)">
+        <rect x="440" y="196" width="320" height="5"/>
+        <rect x="440" y="214" width="320" height="8"/>
+        <rect x="440" y="234" width="320" height="11"/>
+        <rect x="440" y="257" width="320" height="14"/>
+      </g>
+    </g>
+    <path d="M0 270 L90 214 L170 252 L280 168 L380 236 L470 196 L560 262 L640 240 L760 150 L860 228 L960 184 L1060 240 L1140 206 L1200 232 L1200 380 L0 380 Z" fill="var(--fog)"/>
+    <path d="M760 150 L790 176 L772 172 L760 186 L748 170 L732 174 Z M280 168 L304 188 L290 186 L280 198 L268 186 L258 188 Z" fill="var(--foam)" opacity="0.8"/>
+    <path d="M0 300 Q120 262 230 292 T460 296 L460 330 L0 330 Z" fill="var(--evergreen)"/>
+    <path d="M760 300 Q900 258 1020 284 T1200 276 L1200 330 L760 330 Z" fill="var(--evergreen)"/>
+    <use href="#tree" x="40" y="292"/><use href="#tree" x="92" y="284" transform="translate(92 284) scale(1.25) translate(-92 -284)"/>
+    <use href="#tree" x="150" y="290"/><use href="#tree" x="214" y="296" transform="translate(214 296) scale(0.8) translate(-214 -296)"/>
+    <use href="#tree" x="330" y="302" transform="translate(330 302) scale(0.7) translate(-330 -302)"/>
+    <use href="#tree" x="890" y="286" transform="translate(890 286) scale(0.8) translate(-890 -286)"/>
+    <use href="#tree" x="1010" y="284"/><use href="#tree" x="1070" y="280" transform="translate(1070 280) scale(1.3) translate(-1070 -280)"/>
+    <use href="#tree" x="1140" y="282"/>
+    <rect y="322" width="1200" height="58" fill="var(--ocean)"/>
+    <g stroke="var(--mustard)" stroke-width="4" stroke-linecap="round">
+      <line x1="540" y1="336" x2="660" y2="336"/>
+      <line x1="562" y1="350" x2="638" y2="350"/>
+      <line x1="584" y1="364" x2="616" y2="364"/>
+    </g>
+    <g fill="none" stroke="var(--foam)" stroke-width="2.5" stroke-linecap="round" opacity="0.7">
+      <path d="M60 344 q20 -10 40 0 t40 0"/>
+      <path d="M300 362 q20 -10 40 0 t40 0"/>
+      <path d="M820 346 q20 -10 40 0 t40 0"/>
+      <path d="M1040 364 q20 -10 40 0 t40 0"/>
+    </g>
+  </svg>
+</div>
+<div class="stripes" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+
+<script>
+  // On tall, narrow screens, keep the scene from zooming in too far: cap its height and let the sky fill above.
+  (function () {
+    var box = document.querySelector(".scene-box");
+    var svg = document.querySelector(".scene");
+    function fit() {
+      svg.style.height = Math.min(box.clientHeight, box.clientWidth / 1.3) + "px";
+    }
+    fit();
+    window.addEventListener("resize", fit);
+  })();
+</script>
+
+</body>
+</html>
